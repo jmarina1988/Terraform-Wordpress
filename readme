@@ -20,6 +20,22 @@ Arquitectura
 📋 Requisitos
 Terraform instalado.
 AWS CLI configurado con perfiles de autenticación.
+AMI Configurada con los sgt comandos
+yum install php-cli php-pdo php-fpm php-json php-mysqlnd php-pgsql php-xml php-gd php-curl php-zip php-mbstring -y 
+wget https://github.com/PostgreSQL-For-Wordpress/postgresql-for-wordpress/archive/refs/tags/v3.3.1.zip
+unzip v3.3.1.zip
+wget https://es.wordpress.org/wordpress-6.6.2-es_ES.zip
+unzip wordpress-6.6.2-es_ES.zip
+cp -rp wordpress/* /var/www/html
+rm -rf wordpress
+rm -rf wordpress-6.6.2-es_ES.zip
+cd postgresql-for-wordpress-3.3.1/
+mv pg4wp /var/www/html/wp-content/
+cd /var/www/html/wp-content/pg4wp
+cp db.php /var/www/html/wp-content
+cd /var/www/html
+cp wp-config-sample.php wp-config.php
+sudo chmod -R 755 /var/www/html
 
 📂 Estructura del Repositorio
 La estructura del repositorio organiza los recursos por tipo para una fácil navegación:
