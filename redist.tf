@@ -1,3 +1,6 @@
+################################################################################
+# REDIS ---- Creacion de la cache 
+################################################################################
 resource "aws_elasticache_replication_group" "redis-lab4" {
   automatic_failover_enabled  = true
   preferred_cache_cluster_azs = module.vpc.azs

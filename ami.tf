@@ -1,3 +1,6 @@
+################################################################################
+# ASG ----- AMI
+################################################################################
 resource "aws_launch_template" "lt-lab4" {
   image_id      = "ami-052eb71a2bc124a0c"  # Reemplaza con un AMI válido en tu región
   instance_type = "t2.micro"
@@ -50,7 +53,9 @@ resource "aws_iam_instance_profile" "ec2_instance_profile" {
   role = aws_iam_role.ec2_s3_access_role.name
   
 }
-
+################################################################################
+# ASG
+################################################################################
 resource "aws_autoscaling_group" "asg-lab4" {
   name = "asg-lab-4"
   desired_capacity     = 2
@@ -73,7 +78,9 @@ resource "aws_autoscaling_group" "asg-lab4" {
   
   vpc_zone_identifier = module.vpc.private_subnets
 
-
+################################################################################
+# TG ---- Target Group
+################################################################################
   target_group_arns = [aws_lb_target_group.internal_alb_target_group.arn]
 
   health_check_type         = "EC2"

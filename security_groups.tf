@@ -1,5 +1,5 @@
 ################################################################################
-# Security_Groups
+# Security_Groups ----- Grupos de Seguridad
 ################################################################################
 // SG-instancias
 resource "aws_security_group" "ec2-sg-lab4" {

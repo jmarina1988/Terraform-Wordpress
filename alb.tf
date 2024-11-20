@@ -1,6 +1,9 @@
+################################################################################
+# ALB ---- interno 
+################################################################################
 resource "aws_lb" "alb-internal" {
   name               = "alb-internal"
-  internal           = true  # ALB como interno
+  internal           = true  
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb-sg-lab4.id]
   subnets            = module.vpc.private_subnets
@@ -8,7 +11,9 @@ resource "aws_lb" "alb-internal" {
   tags = var.tags
   }
 
-
+################################################################################
+# ALB ---- Target Group ---- Int
+################################################################################
 resource "aws_lb_target_group" "internal_alb_target_group" {
   name        = "internal-alb-tg"
   port        = 80
@@ -18,7 +23,7 @@ resource "aws_lb_target_group" "internal_alb_target_group" {
 
   health_check {
     enabled             = true
-    path                = "/salud"  # Ruta para verificar estado, ajústalo según tu app
+    path                = "/salud" 
     interval            = 30
     timeout             = 5
     healthy_threshold   = 2

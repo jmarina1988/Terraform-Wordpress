@@ -1,3 +1,6 @@
+################################################################################
+# RDS ---- Creacion de la base de datos y monitoreo 
+################################################################################
 resource "aws_db_instance" "rdslab5" {
   identifier              = "rdslab4"
   engine                  = "postgres"
