@@ -59,5 +59,5 @@ LinkedIn
 https://www.linkedin.com/in/javier-manuel-mari%C3%B1a-alarc%C3%B3n-aa3866312/
 Si deseas apoyar mi trabajo, puedes invitarme a un café. ¡Gracias por tu apoyo!
 
-Libertad para Cuba.
+
 

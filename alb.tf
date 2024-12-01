@@ -23,7 +23,7 @@ resource "aws_lb_target_group" "internal_alb_target_group" {
 
   health_check {
     enabled             = true
-    path                = "/salud" 
+    path                = "/salud"
     interval            = 30
     timeout             = 5
     healthy_threshold   = 2
